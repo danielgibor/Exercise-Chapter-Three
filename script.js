@@ -27,4 +27,10 @@ function isAdult(age){
 }
 
 console.log(isAdult(20)); 
-console.log(isAdult(15)); 
+console.log(isAdult(15));
+
+const developers = [
+    {name:"Alice", role:"DevOps"},
+    {name:"Bob", role:"Frontend"},
+    {name:"Charlie", role:"Architect"}
+];
