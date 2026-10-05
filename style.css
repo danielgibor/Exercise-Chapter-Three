@@ -54,3 +54,7 @@ img{
     gap: var(--space-xl);
     padding-left: var(--space-lg);
 }
+
+.hidden{
+    display: none;
+}

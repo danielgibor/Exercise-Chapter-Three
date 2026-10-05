@@ -34,3 +34,7 @@ const developers = [
     {name:"Bob", role:"Frontend"},
     {name:"Charlie", role:"Architect"}
 ];
+
+const button = document.querySelector("#about");
+button.addEventListener("click", ()=>{button.classList.toggle("hidden");});
+button.classList.toggle("hidden");
