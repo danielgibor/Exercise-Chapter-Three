@@ -36,5 +36,10 @@ const developers = [
 ];
 
 const button = document.querySelector("#about");
-button.addEventListener("click", ()=>{button.classList.toggle("hidden");});
-button.classList.toggle("hidden");
+button.addEventListener("click", ()=>{button.classList.toggle(".hidden");});
+
+const form = document.querySelector("#contact-form"); 
+form.addEventListener("submit", (event) => { 
+event.preventDefault(); 
+console.log("Form submitted"); 
+});
