@@ -38,8 +38,22 @@ const developers = [
 const button = document.querySelector("#about");
 button.addEventListener("click", ()=>{button.classList.toggle(".hidden");});
 
-const form = document.querySelector("#contact-form"); 
-form.addEventListener("submit", (event) => { 
-event.preventDefault(); 
-console.log("Form submitted"); 
+// const form = document.querySelector("#contact-form"); 
+// form.addEventListener("submit", (event) => { 
+// event.preventDefault(); 
+// console.log("Form submitted"); 
+// });
+
+const form = document.querySelector("#contact-form");
+const submissionMessage = document.querySelector("#result-message");
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const nameForm = document.querySelector("#name").value.trim();
+    const emailForm = document.querySelector("#email").value.trim();
+    const messageForm = document.querySelector("#message").value.trim();
+    if((!nameForm) || (!emailForm) || (!messageForm)){
+        submissionMessage.textContent = "Please fill in all required fields";
+        return;
+    }
+    submissionMessage.textContent = "Submission Completed";
 });
