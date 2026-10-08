@@ -77,4 +77,17 @@ for (const project of projects){
     projects_49.appendChild(element);
 }
 
-console.log(nonExistentVariable);
+// console.log(nonExistentVariable);
+
+// 55. Your first breakpoint
+
+function calculateTotal(price, quantity){
+    const total = price * quantity;
+    return total;
+}
+
+const result = calculateTotal(20, 3);
+console.log(result);
+
+
+
