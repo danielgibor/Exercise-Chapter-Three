@@ -76,3 +76,5 @@ for (const project of projects){
     element.textContent = "Project Name: " + project.name + "; Project Description: " + project.description;
     projects_49.appendChild(element);
 }
+
+console.log(nonExistentVariable);
