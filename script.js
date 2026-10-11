@@ -107,3 +107,10 @@ childBtn.addEventListener('click', (event)=> {
     console.log("event.target: ", event.target.tagName);
     console.log("event.currentTarget: ", event.currentTarget.tagName);
 });
+
+// Investigation fetch() 63
+
+fetch("https://example.com")
+    .then((response) => {
+        console.log(response);
+    });
