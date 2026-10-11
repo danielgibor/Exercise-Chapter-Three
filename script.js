@@ -89,5 +89,21 @@ function calculateTotal(price, quantity){
 const result = calculateTotal(20, 3);
 console.log(result);
 
+// Events and event flow
+const parentDiv = document.querySelector('#parent');
+const childBtn = document.querySelector('#child');
+// listen to the parent
+parentDiv.addEventListener('click', (event)=> {
+    event.preventDefault();
+    console.log("The parent's button was activated");
+    console.log("event.target: ", event.target.tagName);
+    console.log("event.currentTarget: ", event.currentTarget.tagName);
+});
 
 
+childBtn.addEventListener('click', (event)=> {
+    event.preventDefault();
+    console.log("The child's button was activated");
+    console.log("event.target: ", event.target.tagName);
+    console.log("event.currentTarget: ", event.currentTarget.tagName);
+});
