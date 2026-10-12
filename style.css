@@ -55,6 +55,18 @@ img{
     padding-left: var(--space-lg);
 }
 
-.hidden{
-    display: none;
+
+
+/* 64. Practical challenge — build a project filter  */
+.project-card {
+  border: 1px solid black;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: lightgray;
+  border-radius: 5px;
 }
+
+.hidden {
+  display: none;
+}
+

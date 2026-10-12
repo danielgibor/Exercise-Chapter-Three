@@ -90,27 +90,79 @@ const result = calculateTotal(20, 3);
 console.log(result);
 
 // Events and event flow
-const parentDiv = document.querySelector('#parent');
-const childBtn = document.querySelector('#child');
-// listen to the parent
-parentDiv.addEventListener('click', (event)=> {
-    event.preventDefault();
-    console.log("The parent's button was activated");
-    console.log("event.target: ", event.target.tagName);
-    console.log("event.currentTarget: ", event.currentTarget.tagName);
-});
+// const parentDiv = document.querySelector('#parent');
+// const childBtn = document.querySelector('#child');
+// // listen to the parent
+// parentDiv.addEventListener('click', (event)=> {
+//     event.preventDefault();
+//     console.log("The parent's button was activated");
+//     console.log("event.target: ", event.target.tagName);
+//     console.log("event.currentTarget: ", event.currentTarget.tagName);
+// });
 
 
-childBtn.addEventListener('click', (event)=> {
-    event.preventDefault();
-    console.log("The child's button was activated");
-    console.log("event.target: ", event.target.tagName);
-    console.log("event.currentTarget: ", event.currentTarget.tagName);
-});
+// childBtn.addEventListener('click', (event)=> {
+//     event.preventDefault();
+//     console.log("The child's button was activated");
+//     console.log("event.target: ", event.target.tagName);
+//     console.log("event.currentTarget: ", event.currentTarget.tagName);
+// });
 
 // Investigation fetch() 63
 
-fetch("https://example.com")
-    .then((response) => {
-        console.log(response);
-    });
+// fetch("https://example.com")
+//     .then((response) => {
+//         console.log(response);
+//     });
+
+// 64. Practical challenge — build a project filter
+const projects_64 = [
+    {
+        name: "Portfolio",
+        technology: "HTML",
+    },
+    {
+        name: "Task Manager",
+        technology: "JavaScript",
+    },
+    {
+        name: "API Explorer",
+        technology: "JavaScript",
+    }
+];
+
+// 64. Practical challenge — build a project filter
+
+// Find the empty container from our HTML
+const container = document.querySelector("#projects-container");
+for (let i=0; i < projects_64.length; i++){
+    const currentProject = projects_64[i];
+    const card = document.createElement("div");
+    card.classList.add("project-card");
+    card.setAttribute("data-tech", currentProject.technology);
+    card.innerHTML = '<h3> Project Name: ${currentProject.name}</h3><p>Technology: ${currentProject.technology}</p>';
+    container.appendChild(card);
+}
+
+const btnAll = document.querySelector("#btn-all");
+const btnHTML = document.querySelector("#btn-html");
+const btnJS = document.querySelector("#btn-js");
+
+function filterProjects(chosenTech){
+    const allCards = document.querySelectorAll(".project-card");
+    for (let i=0; i<allCards.length; i++){
+        const card = allCards[i];
+        const cardTech = card.getAttribute("data-tech");
+        if (chosenTech === "All"){
+            card.classList.remove("hidden");
+        } else if (chosenTech == cardTech){
+            card.classList.remove("hidden");
+        } else {
+            card.classList.add("hidden");
+        }
+    }
+}
+
+btnAll.addEventListener("click", () => {filterProjects("All");});
+btnHTML.addEventListener("click", () => {filterProjects("HTML");});
+btnJS.addEventListener("click", () => {filterProjects("JavaScript");});
