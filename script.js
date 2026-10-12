@@ -140,7 +140,8 @@ for (let i=0; i < projects_64.length; i++){
     const card = document.createElement("div");
     card.classList.add("project-card");
     card.setAttribute("data-tech", currentProject.technology);
-    card.innerHTML = '<h3> Project Name: ${currentProject.name}</h3><p>Technology: ${currentProject.technology}</p>';
+    // Backticks
+    card.innerHTML = `<h3> Project Name: ${currentProject.name}</h3><p>Technology: ${currentProject.technology}</p>`;
     container.appendChild(card);
 }
 
